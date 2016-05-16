@@ -1,0 +1,16 @@
+.menu{
+    background-color: black;
+    height: 2em;
+    padding: 1em;
+}
+
+.logo{
+    color: white;
+    font-size: 2em;
+    inline: true;
+}
+
+.nav:hover {
+    background-color: grey;
+    padding: 1.5em;
+}

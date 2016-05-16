@@ -1,0 +1,54 @@
+<div class="row menu">
+    <div class="two columns ">
+        <span class="logo">hopefeedr</span>
+    </div>
+    <div class="two columns">
+        <a href="#" class="nav"></a>
+    </div>
+    <div class="two columns offset-by-ten">
+        <a href="/logout" class="nav">Logout</a>
+    </div>
+</div>
+<div class="row">
+    <div class="six columns">
+        <table>
+            <tr>
+                <th colspan="2">
+                    Child details
+                </th>
+                <th colspan="5">
+                    Sponsor details
+                </th>
+            </tr>
+            {{#each sponsorships}}
+                <tr>
+                    <td>
+                        {{child.first_name}}
+                    </td>
+                    <td>
+                        {{child.last_name}}
+                    </td>
+                    <td>
+                        {{sponsor.first_name}}
+                    </td>
+                    <td>
+                        {{sponsor.last_name}}
+                    </td>
+                    <td>
+                        {{sponsor.email}}
+                    </td>
+                    <td>
+                        {{sponsor.address.address1}}
+                        <br> {{sponsor.address.address2}}
+                        <br> {{sponsor.address.address3}}
+                        <br> {{sponsor.address.address4}}
+                    </td>
+
+                    <td>
+                        <a href="/sponsorships/{{id}}">Details</a>
+                    </td>
+                </tr>
+            {{/each}}
+        </table>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="row">
+    <h1>Sponsorship</h1>
+    <div class="four columns">
+        <h2>Sponsor</h2>
+        <div class="row">
+            <div class="twelve columns">
+                <label for="exampleEmailInput">First name</label>
+                {{sponsorship.sponsor.first_name}}
+                <label for="exampleEmailInput">Last name</label>
+                {{sponsorship.sponsor.last_name}}
+                <label for="exampleEmailInput">Email</label>
+                {{sponsorship.sponsor.email}}
+                <h3>Child</h3>
+                <label for="exampleEmailInput">First name</label>
+                {{sponsorship.child.first_name}}
+                <label for="exampleEmailInput">Last name</label>
+                {{sponsorship.child.last_name}}
+            </div>
+        </div>
+    </div>
+    <div class="six columns">
+        <div class="row">
+
+            <h2>Address</h2>
+            {{sponsorship.sponsor.address.address1}}<br>
+            {{sponsorship.sponsor.address.address2}}<br>
+            {{sponsorship.sponsor.address.address3}}<br>
+            {{sponsorship.sponsor.address.address4}}
+        </div>
+    </div>
+</div>
