@@ -4,7 +4,8 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var bodyParser = require('body-parser');
-var session = require('express-session')
+var session = require('express-session');
+var flash = require('express-flash');
 var bcrypt = require('bcrypt');
 var co = require('co');
 var mongodb = require('mongodb');
@@ -21,10 +22,12 @@ app.use(session({
   saveUninitialized: true
 }));
 
+app.use(flash());
+
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
@@ -96,6 +99,9 @@ app.post('/login', function(req, res, next) {
                 bcrypt.compare(req.body.password, user.password, function(err, match) {
                     if(match){
                         req.session.user = user;
+                    }
+                    else{
+                        req.flash("login_failed", "login failed")
                     }
                     res.redirect("/");
                 });

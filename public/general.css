@@ -1,0 +1,11 @@
+.message {
+    background-color: pink;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.success-message {
+    background-color: lightblue ;
+    padding: 1em;
+    margin-bottom: 1em;
+}

@@ -1,10 +1,21 @@
 <!-- The above form looks like this -->
 <form action="/login" method="post">
+
     <div class="row">
         <div class="six columns offset-by-three">
             <h1>Login</h1>
         </div>
     </div>
+
+{{#if messages.login_failed}}
+
+    <div class="row">
+        <div class="four columns offset-by-three message">
+            Login failed!
+        </div>
+    </div>
+{{/if}}
+
   <div class="row">
     <div class="three columns offset-by-three">
       <label for="exampleEmailInput">Username</label>
